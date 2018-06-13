@@ -15,3 +15,31 @@ _version_    = "0.1"
 _maintainer_ = ""
 
 _status_     = "Development"
+
+#INCLUDES
+from tkinter import *
+
+
+calculator = Tk()
+calculator.title('Calculator')
+calculator.geometry("400x550")
+calculator.resizable(0,0)
+
+class Application (Frame):
+	def __init__(self, master):
+		Frame.__init__(self, master)
+		self.createDisplay()
+
+
+	def createDisplay(self):
+		self.display = Entry (self, font = ("Helvetica", 27), justify = RIGHT)
+		self.display.insert (0, "0")
+		self.display.grid(row = 0, column = 0)
+
+a = Application(calculator).grid()
+calculator.mainloop()
+
+
+
+
+
